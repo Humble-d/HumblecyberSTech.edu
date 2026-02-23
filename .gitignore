@@ -1,0 +1,13 @@
+# OS metadata (keeps your repo clean)
+.DS_Store
+Thumbs.db
+
+# sensitive environment files (CRITICAL for security)
+.env
+*.log
+secret.txt
+credentials.json
+
+# Large media or backups
+*.zip
+*.bak
