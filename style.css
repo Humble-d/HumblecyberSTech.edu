@@ -1,0 +1,177 @@
+:root {
+    --primary-blue: #00d4ff;
+    --dark-bg: #050a12; /* Deep blue-black from Image 3 */
+    --accent-glow: rgba(0, 212, 255, 0.2);
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Background Effect from Image 3 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 30%, #102a43 0%, #050a12 70%);
+    z-index: -1;
+}
+
+/* Header & Logo */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+.logo {
+    height: 80px;
+    filter: drop-shadow(0 0 10px var(--primary-blue));
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 30px; }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.glitch-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary-blue);
+    text-shadow: 0 0 20px var(--primary-blue);
+}
+
+.mission-statement {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.cta-button {
+    background: transparent;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--primary-blue);
+    color: black;
+    box-shadow: 0 0 20px var(--primary-blue);
+}
+
+/* Services Grid (Layout of Image 1) */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 50px 10%;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-left: 4px solid var(--primary-blue);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.service-card h3 {
+    margin: 15px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+}
+
+/* About & Why Sections */
+.info-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #0a1421;
+    padding: 60px 10%;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--primary-blue);
+    color: black;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.info-box { padding: 20px; }
+
+/* Footer */
+footer {
+    background: black;
+    padding: 50px 10%;
+    border-top: 1px solid #222;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-blue);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .services-container, .info-split, .footer-content {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+    }
+    .glitch-text { font-size: 3rem; }
+}
